@@ -32,5 +32,11 @@ namespace MDP_1
         {
             return this.valor > ((Numero)c).valor;
         }
+
+        //Implemento la interefaz tostring
+        public override string ToString()
+        {
+            return $"Numero= {valor}";
+        }
     }
 }

@@ -45,11 +45,7 @@ namespace MDP_1
 
         public bool contiene(Comparable c)
         {
-            if (pilas.contiene(c) | colas.contiene(c))
-            {
-                return true;
-            }
-            return false;
+            return pilas.contiene(c) || colas.contiene(c);
         }
     }
 }

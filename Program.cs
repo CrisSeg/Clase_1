@@ -17,13 +17,17 @@ namespace MDP_1
             //Creo una coleccion multiple
             ColeccionMultiple multiple = new ColeccionMultiple(p, c);
 
-            //Aplico los metos de llenar
-            llenar(p);
-            llenar(c);
+            //Aplico los metodos de llenar
+            //llenar(p);
+            //llenar(c);
+
+            //Ejercicio 14
+            llenarAlumnos(p);
+            llenarAlumnos(c);
 
             //Aplico los metodos de informar
-            informar(p);
-            informar(c);
+            //informar(p);
+            //informar(c);
             informar(multiple);
         }
 
@@ -38,16 +42,28 @@ namespace MDP_1
             }
         }
 
+        //Ejercicio 13
+        public static void llenarAlumnos(Coleccionable c) {
+            Random dni = new Random();
+            Random leg = new Random();
+            Random prom = new Random();
+            for(int i = 0; i < 20; i++)
+            {
+                Alumno com = new Alumno("Cristian", dni.Next(40000000,43000000), leg.Next(0, 1000), prom.NextDouble());
+                c.agregar(com);
+            }
+        }
+
         //Ejercicio 6
         public static void informar(Coleccionable c)
         {
             Console.WriteLine("La cantidad total de la elementos de la lista es: " + c.cuantos());
-            Console.WriteLine("El numero mas chico de la lista es: " + c.minimo());
-            Console.WriteLine("El numero mas grande de la lista es: " + c.maximo());
+            Console.WriteLine("El numero mas chico de la lista es: {0}" , c.minimo().ToString());
+            Console.WriteLine("El numero mas grande de la lista es: {0}" , c.maximo().ToString());
 
-            //Bussco el elemnto que pide el usuario
-            Console.WriteLine("Escribar el elemento que desea buscar en la lista: ");
-            Comparable aux = new Numero(int.Parse(s: Console.ReadLine()));
+            //Busco el elemento que pide el usuario
+            Console.WriteLine("Ingrese un numero: ");
+            Comparable aux = new Numero(int.Parse(Console.ReadLine()));
             if (c.contiene(aux))
             {
                 Console.WriteLine("El elemento leido se encuentra en la lista");

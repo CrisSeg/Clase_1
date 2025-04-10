@@ -35,12 +35,12 @@ namespace MDP_1
 
         public Comparable minimo()
         {
-            Comparable aux = elementos[0];
-            for (int i = 1; i < cuantos(); i++)
+            Comparable aux = this.elementos[0];
+            for (int i = 1; i < this.cuantos(); i++)
             {
-                if (aux.sosMenor(elementos[i]))
+                if (this.elementos[i].sosMenor(aux))
                 {
-                    aux = elementos[i];
+                    aux = this.elementos[i];
                 }
             }
             return aux;
@@ -48,12 +48,12 @@ namespace MDP_1
 
         public Comparable maximo()
         {
-            Comparable aux = elementos[0];
-            for (int i = 1; i < cuantos(); i++)
+            Comparable aux = this.elementos[0];
+            for (int i = 1; i < this.cuantos(); i++)
             {
-                if (aux.sosMayor(elementos[i]))
+                if (this.elementos[i].sosMayor(aux))
                 {
-                    aux = elementos[i];
+                    aux = this.elementos[i];
                 }
             }
             return aux;
@@ -66,12 +66,12 @@ namespace MDP_1
 
         public bool contiene(Comparable c)
         {
-            for (int i = 0; i < cuantos(); i++)
+            for (int i = 0; i < this.cuantos(); i++)
             {
-                if (c.sosIgual(elementos[i]))
+                if (this.elementos[i].sosIgual(c))
                 {
-                    return true;
-                }
+                    return this.elementos[i].sosIgual(c);
+                }    
             }
             return false;
         }

@@ -61,7 +61,7 @@ namespace MDP_1
             Console.WriteLine("El numero mas chico de la lista es: {0}" , c.minimo().ToString());
             Console.WriteLine("El numero mas grande de la lista es: {0}" , c.maximo().ToString());
 
-            //Busco el elemento que pide el usuario
+            //Busco el elemento que pide el usuario. En esta parte me salta el error
             Console.WriteLine("Ingrese un numero: ");
             Comparable aux = new Numero(int.Parse(Console.ReadLine()));
             if (c.contiene(aux))
